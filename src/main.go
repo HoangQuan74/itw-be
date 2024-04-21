@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"itw-be/src/config"
 	"log"
 	"os"
 
@@ -32,6 +33,5 @@ func main() {
 
 	config.InitDB()
 
-	// Khởi động server
 	log.Fatal(server.Run(fmt.Sprintf(":%s", svPort)))
 }
