@@ -12,7 +12,7 @@ type RegularTodoDetail struct {
 	Name            string `gorm:"type:varchar(200)"`
 	StartDate       *time.Time
 	EndDate         *time.Time
-	RegularTodoID   uuid.UUID
+	RegularTodoID   uuid.UUID `gorm:"size:255"`
 	CurrentStatus   string
 	CompletedStatus string
 

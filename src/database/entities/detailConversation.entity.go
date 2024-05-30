@@ -7,9 +7,9 @@ import (
 
 type DetailConversationEnity struct {
 	gorm.Model
-	SenderID       uuid.UUID
-	Content        string `gorm:"type:longtext"`
-	ConversationID uuid.UUID
+	SenderID       uuid.UUID `gorm:"size:255"`
+	Content        string    `gorm:"type:longtext"`
+	ConversationID uuid.UUID `gorm:"size:255"`
 
 	Sender       UserPerson
 	Conversation Conversation

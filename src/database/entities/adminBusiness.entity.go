@@ -7,8 +7,8 @@ import (
 
 type AdminBusiness struct {
 	gorm.Model
-	UserID     uuid.UUID
-	BusinessID uuid.UUID
+	UserID     uuid.UUID `gorm:"size:255"`
+	BusinessID uuid.UUID `gorm:"size:255"`
 
 	User     UserPerson
 	Business Business

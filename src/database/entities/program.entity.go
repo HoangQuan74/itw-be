@@ -8,7 +8,7 @@ import (
 type Program struct {
 	gorm.Model
 	Name     string    `gorm:"type:varchar(100)"`
-	SchoolID uuid.UUID `gorm:"type:uuid"`
+	SchoolID uuid.UUID `gorm:"type:uuid;size:255"`
 
 	School School
 }

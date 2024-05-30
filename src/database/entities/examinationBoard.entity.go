@@ -9,12 +9,12 @@ import (
 
 type ExaminationBoard struct {
 	gorm.Model
-	PresidentID    uuid.UUID
-	SecretaryID    uuid.UUID
-	AskerID        uuid.UUID
-	AcademicYearID uuid.UUID
-	SemesterID     uuid.UUID
-	DepartmentID   uuid.UUID
+	PresidentID    uuid.UUID `gorm:"size:255"`
+	SecretaryID    uuid.UUID `gorm:"size:255"`
+	AskerID        uuid.UUID `gorm:"size:255"`
+	AcademicYearID uuid.UUID `gorm:"size:255"`
+	SemesterID     uuid.UUID `gorm:"size:255"`
+	DepartmentID   uuid.UUID `gorm:"size:255"`
 	ReportDate     *time.Time
 
 	President    Teacher

@@ -9,10 +9,10 @@ type Class struct {
 	gorm.Model
 	Name           string `gorm:"type:varchar(50)"`
 	Students       *int
-	AcademicYearID uuid.UUID `gorm:"type:uuid"`
-	ProgramID      uuid.UUID `gorm:"type:uuid"`
-	MajorID        uuid.UUID `gorm:"type:uuid"`
-	TeacherHeadID  uuid.UUID `gorm:"type:uuid"`
+	AcademicYearID uuid.UUID `gorm:"type:uuid;size:255"`
+	ProgramID      uuid.UUID `gorm:"type:uuid;size:255"`
+	MajorID        uuid.UUID `gorm:"type:uuid;size:255"`
+	TeacherHeadID  uuid.UUID `gorm:"type:uuid;size:255"`
 
 	AcademicYear AcademicYear
 	Program      Program

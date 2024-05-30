@@ -37,16 +37,16 @@ func init() {
 
 func InitDB() {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbUser, dbPass, dbHost, dbPort, dbName)
-	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{DisableForeignKeyConstraintWhenMigrating: true})
 	if err != nil {
 		log.Fatal("Failed to connect to database. \n", err)
 	} else {
 		log.Println("Connected to database successfully!")
 	}
-	// err = AutoMigrate(DB)
-	// if err != nil {
-	// 	log.Fatal("Failed to perform auto migration. \n", err)
-	// }
+	err = AutoMigrate(DB)
+	if err != nil {
+		log.Fatal("Failed to perform auto migration. \n", err)
+	}
 }
 
 func AutoMigrate(connection *gorm.DB) error {

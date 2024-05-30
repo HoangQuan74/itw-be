@@ -8,7 +8,7 @@ import (
 type Semester struct {
 	gorm.Model
 	Name     string    `gorm:"type:varchar(20)"`
-	SchoolID uuid.UUID `gorm:"type:uuid"`
+	SchoolID uuid.UUID `gorm:"type:uuid;size:255"`
 
 	School School
 }

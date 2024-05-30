@@ -8,7 +8,7 @@ import (
 type AcademicYear struct {
 	gorm.Model
 	CurrentYear int
-	SchoolID    uuid.UUID `gorm:"type:uuid"`
+	SchoolID    uuid.UUID `gorm:"size:255"`
 
 	School School
 }
