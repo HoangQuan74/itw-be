@@ -43,10 +43,10 @@ func InitDB() {
 	} else {
 		log.Println("Connected to database successfully!")
 	}
-	err = AutoMigrate(DB)
-	if err != nil {
-		log.Fatal("Failed to perform auto migration. \n", err)
-	}
+	// err = AutoMigrate(DB)
+	// if err != nil {
+	// 	log.Fatal("Failed to perform auto migration. \n", err)
+	// }
 }
 
 func AutoMigrate(connection *gorm.DB) error {
